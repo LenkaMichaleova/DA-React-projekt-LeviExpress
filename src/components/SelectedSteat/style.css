@@ -1,0 +1,80 @@
+/* ---------- styly pro výběr sedadla  ---------- */
+
+.seat-picker {
+  padding: 2rem;
+}
+
+.seats {
+  margin: 2rem 0;
+}
+
+/* ---------- styly pro sedadlo  ---------- */
+
+.selected-seat {
+  padding: 2rem;
+}
+
+.seat {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.25rem;
+}
+
+.seat:not(.seat--occupied):not(.seat--selected) {
+  cursor: pointer;
+}
+
+.seat__rect {
+  fill: #69bffc;
+}
+
+.seat--auto {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+.seat--occupied .seat__rect {
+  fill: #888;
+}
+
+.seat--selected {
+  transform: scale(1.2);
+}
+
+.seat--selected .seat__rect,
+.seat:not(.seat--occupied):hover .seat__rect {
+  fill: #ed6a5a;
+}
+
+.seat__path {
+  fill: none;
+  stroke: #888;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.seat--selected .seat__path,
+.seat:not(.seat--occupied):hover .seat__path {
+  stroke: black;
+}
+
+.seat__text {
+  fill: #000000;
+  font-family: "Open Sans";
+  font-size: 36px;
+  text-anchor: middle;
+  user-select: none;
+}
+
+.seat--selected .seat__text,
+.seat:not(.seat--occupied):hover .seat__text {
+  fill: white;
+}
+
+.controls {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
