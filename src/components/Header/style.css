@@ -1,0 +1,22 @@
+header {
+  padding-top: 1px;
+  height: 305px;
+
+  color: white;
+  background-color: #69bffc;
+  background-image: url(./img/banner.png);
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.site-title {
+  margin: 0.5rem 0;
+}
+
+.site-title a,
+.site-title a:active,
+.site-title a:visited {
+  color: white;
+  text-decoration: none;
+}
