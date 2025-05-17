@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 
-export const JourneyPicker = ({ onJourneyChange }) => (
+export const JourneyPicker = ({ onJourneyChange }) => {
+  const [fromCity, setFromCity] = useState("")
+  const [toCity, setToCity] = useState("")
+  const [date, setDate] = useState("")
+
+  const handleSubmit= (event) => {
+    event.preventDefault()
+    console.log("odesílám formulář s cestou")
+    console.log("z: " + fromCity)
+    console.log("do: " + toCity)
+    console.log("kdy: " + date)
+  }
+  
+  return (
   <div className="journey-picker container">
     <h2 className="journey-picker__head">Kam chcete jet?</h2>
     <div className="journey-picker__body">
-      <form className="journey-picker__form">
+      <form className="journey-picker__form" onSubmit={handleSubmit}>
         <label>
           <div className="journey-picker__label">Odkud:</div>
-          <select>
+          <select value={fromCity} onChange={(e) => setFromCity(e.target.value)}>
             <option value="">Vyberte</option>
             <option value="mesto01">Město 01</option>
             <option value="mesto02">Město 02</option>
@@ -19,7 +32,7 @@ export const JourneyPicker = ({ onJourneyChange }) => (
         </label>
         <label>
           <div className="journey-picker__label">Kam:</div>
-          <select>
+          <select value={toCity} onChange={(e) => setToCity(e.target.value)}>
             <option value="">Vyberte</option>
             <option value="mesto01">Město 01</option>
             <option value="mesto02">Město 02</option>
@@ -30,7 +43,7 @@ export const JourneyPicker = ({ onJourneyChange }) => (
         </label>
         <label>
           <div className="journey-picker__label">Datum:</div>
-          <select>
+          <select value={date} onChange={(e) => setDate(e.target.value)}>
             <option value="">Vyberte</option>
             <option value="datum01">Datum 01</option>
             <option value="datum02">Datum 02</option>
@@ -51,4 +64,5 @@ export const JourneyPicker = ({ onJourneyChange }) => (
       <img className="journey-picker__map" src="/map.svg" />
     </div>
   </div>
-);
+  );
+};
