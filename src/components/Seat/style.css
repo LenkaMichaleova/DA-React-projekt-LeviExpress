@@ -1,4 +1,3 @@
-
 /* ---------- styly pro sedadlo  ---------- */
 
 .selected-seat {
@@ -62,10 +61,4 @@
 .seat--selected .seat__text,
 .seat:not(.seat--occupied):hover .seat__text {
   fill: white;
-}
-
-.controls {
-  padding: 0 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
 }

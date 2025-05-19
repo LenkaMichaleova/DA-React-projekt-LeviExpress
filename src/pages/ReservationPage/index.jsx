@@ -14,7 +14,6 @@ export const ReservationPage = () => {
     }
     fetchReservation()
   }, [])
-  console.log(reservation)
 
   return (
     <div className="reservation container">

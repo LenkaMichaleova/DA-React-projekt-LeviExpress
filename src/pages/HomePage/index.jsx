@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router";
 import { JourneyPicker } from '../../components/JourneyPicker';
 import { JourneyDetail } from '../../components/JourneyDetail';
-import './style.css';
-import { useNavigate } from "react-router";
 import { SeatPicker } from '../../components/SeatPicker';
+import './style.css';
 
 export const HomePage = () => {
   const [journey, setJourney] = useState(null)
@@ -35,8 +35,8 @@ export const HomePage = () => {
       <JourneyPicker onJourneyChange={handleJourneyChange}/>
       {journey &&
         <>
-          <JourneyDetail journey={journey}/>
-          <SeatPicker />
+          <JourneyDetail journey={journey} />
+          <SeatPicker seats={journey.seats} />
 
           <div className="controls container">
             <button className="btn btn--big" type="button" onClick={handleBuy}>
