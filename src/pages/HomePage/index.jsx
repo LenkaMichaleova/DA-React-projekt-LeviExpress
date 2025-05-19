@@ -36,7 +36,7 @@ export const HomePage = () => {
       {journey &&
         <>
           <JourneyDetail journey={journey} />
-          <SeatPicker seats={journey.seats} />
+          <SeatPicker seats={journey.seats} selectedSeat={journey.autoSeat} />
 
           <div className="controls container">
             <button className="btn btn--big" type="button" onClick={handleBuy}>
